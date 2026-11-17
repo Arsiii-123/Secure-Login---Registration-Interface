@@ -1,0 +1,93 @@
+<!-- Pynexia Frontend Internship | Secure Login & Registration Interface | By: Arslan -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Secure Login & Registration | Pynexia Frontend Internship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <p class="brand">Pynexia Frontend Internship - Built by Arslan</p>
+
+    <main class="card">
+      <div class="tabs" role="tablist" aria-label="Choose form">
+        <button class="tab" role="tab" id="tab-login" aria-selected="true" aria-controls="loginForm">Login</button>
+        <button class="tab" role="tab" id="tab-register" aria-selected="false" aria-controls="registerForm"
+          tabindex="-1">Register</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm" role="tabpanel" aria-labelledby="tab-login" novalidate>
+        <h1>Welcome back</h1>
+        <p class="sub">Log in to continue to your account.</p>
+
+        <div class="field">
+          <label for="l-email">Email</label>
+          <div class="control"><input id="l-email" name="email" type="email" data-rule="email" autocomplete="email"
+              required aria-describedby="l-email-err"></div>
+          <p class="error" id="l-email-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="l-pass">Password</label>
+          <div class="control pw"><input id="l-pass" name="password" type="password" data-rule="password"
+              autocomplete="current-password" required aria-describedby="l-pass-err">
+            <button type="button" class="pw-btn" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+          <p class="error" id="l-pass-err" aria-live="polite"></p>
+        </div>
+        <button class="submit" type="submit">Log in</button>
+        <p class="status" role="status"></p>
+        <p class="switch">No account yet? <button type="button" data-go="register">Register</button></p>
+      </form>
+
+      <!-- REGISTER -->
+      <form id="registerForm" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+        <h1>Create account</h1>
+        <p class="sub">Fill in the details below to sign up.</p>
+
+        <div class="field">
+          <label for="r-name">Full name</label>
+          <div class="control"><input id="r-name" name="name" type="text" data-rule="name" autocomplete="name" required
+              aria-describedby="r-name-err"></div>
+          <p class="error" id="r-name-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="r-email">Email</label>
+          <div class="control"><input id="r-email" name="email" type="email" data-rule="email" autocomplete="email"
+              required aria-describedby="r-email-err"></div>
+          <p class="error" id="r-email-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="r-pass">Password</label>
+          <div class="control pw"><input id="r-pass" name="password" type="password" data-rule="password"
+              autocomplete="new-password" required aria-describedby="r-pass-err r-pass-hint">
+            <button type="button" class="pw-btn" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+          <p class="hintline" id="r-pass-hint">Use at least 8 characters.</p>
+          <p class="error" id="r-pass-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="r-confirm">Confirm password</label>
+          <div class="control pw"><input id="r-confirm" name="confirm" type="password" data-rule="confirm"
+              data-match="r-pass" autocomplete="new-password" required aria-describedby="r-confirm-err">
+            <button type="button" class="pw-btn" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+          <p class="error" id="r-confirm-err" aria-live="polite"></p>
+        </div>
+        <button class="submit" type="submit">Create account</button>
+        <p class="status" role="status"></p>
+        <p class="switch">Already registered? <button type="button" data-go="login">Log in</button></p>
+      </form>
+    </main>
+
+    <button class="theme" id="theme">Toggle theme</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
